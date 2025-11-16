@@ -2,23 +2,56 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('🎉 Welcome page loaded');
     
-    // Track page view (будет работать когда добавите Google Analytics)
-    if (typeof gtag !== 'undefined') {
-        gtag('event', 'welcome_page_viewed', {
-            event_category: 'onboarding',
-            event_label: 'extension_installed',
-            custom_parameter_1: 'chrome_extension'
+    // Track page view with Vercel Analytics
+    if (typeof window.va !== 'undefined') {
+        window.va('track', 'Welcome Page Viewed', {
+            source: getUrlParameter('source') || 'direct',
+            version: getUrlParameter('version') || 'unknown'
         });
     }
     
     // Initialize interactive effects
     initializeInteractiveEffects();
     
+    // Track footer link clicks
+    initializeAnalyticsTracking();
+    
     // Mark page as loaded
     setTimeout(() => {
         document.body.classList.add('loaded');
     }, 100);
 });
+
+// Get URL parameters
+function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+}
+
+// Initialize analytics tracking for interactions
+function initializeAnalyticsTracking() {
+    // Track footer link clicks
+    const footerLink = document.querySelector('.footer-link');
+    if (footerLink && typeof window.va !== 'undefined') {
+        footerLink.addEventListener('click', function() {
+            window.va('track', 'Footer Link Clicked', {
+                link: 'SVGBackgrounds.com'
+            });
+        });
+    }
+    
+    // Track step card interactions
+    const stepCards = document.querySelectorAll('.step-card');
+    stepCards.forEach((card, index) => {
+        card.addEventListener('click', function() {
+            if (typeof window.va !== 'undefined') {
+                window.va('track', 'Step Card Clicked', {
+                    step: index + 1
+                });
+            }
+        });
+    });
+}
 
 // Keyboard shortcuts
 function initializeKeyboardShortcuts() {
