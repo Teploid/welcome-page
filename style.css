@@ -1,0 +1,304 @@
+/* CSS Variables */
+:root {
+    --Dark-Text-main: #FFF;
+    --primary-purple: #9244FF;
+    --card-background: #2B2339;
+    --card-border: rgba(255, 255, 255, 0.05);
+    --highlight-red: #EC5143;
+    --pin-background: rgba(146, 68, 255, 0.21);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #18161C;
+    color: var(--Dark-Text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background pattern */
+.bg-pattern {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1666.7" viewBox="0 0 1080 900"><g fill-opacity="0.01"><polygon fill="%23444" points="90 150 0 300 180 300"/><polygon points="90 150 180 0 0 0"/><polygon fill="%23AAA" points="270 150 360 0 180 0"/><polygon fill="%23DDD" points="450 150 360 300 540 300"/><polygon fill="%23999" points="450 150 540 0 360 0"/><polygon points="630 150 540 300 720 300"/><polygon fill="%23DDD" points="630 150 720 0 540 0"/><polygon fill="%23444" points="810 150 720 300 900 300"/><polygon fill="%23FFF" points="810 150 900 0 720 0"/><polygon fill="%23DDD" points="990 150 900 300 1080 300"/><polygon fill="%23444" points="990 150 1080 0 900 0"/><polygon fill="%23DDD" points="90 450 0 600 180 600"/><polygon points="90 450 180 300 0 300"/><polygon fill="%23666" points="270 450 180 600 360 600"/><polygon fill="%23AAA" points="270 450 360 300 180 300"/><polygon fill="%23DDD" points="450 450 360 600 540 600"/><polygon fill="%23999" points="450 450 540 300 360 300"/><polygon fill="%23999" points="630 450 540 600 720 600"/><polygon fill="%23FFF" points="630 450 720 300 540 300"/><polygon points="810 450 720 600 900 600"/><polygon fill="%23DDD" points="810 450 900 300 720 300"/><polygon fill="%23AAA" points="990 450 900 600 1080 600"/><polygon fill="%23444" points="990 450 1080 300 900 300"/><polygon fill="%23222" points="90 750 0 900 180 900"/><polygon points="270 750 180 900 360 900"/><polygon fill="%23DDD" points="270 750 360 600 180 600"/><polygon points="450 750 540 600 360 600"/><polygon points="630 750 540 900 720 900"/><polygon fill="%23444" points="630 750 720 600 540 600"/><polygon fill="%23AAA" points="810 750 720 900 900 900"/><polygon fill="%23666" points="810 750 900 600 720 600"/><polygon fill="%23999" points="990 750 900 900 1080 900"/><polygon fill="%23999" points="180 0 90 150 270 150"/><polygon fill="%23444" points="360 0 270 150 450 150"/><polygon fill="%23FFF" points="540 0 450 150 630 150"/><polygon points="900 0 810 150 990 150"/><polygon fill="%23222" points="0 300 -90 450 90 450"/><polygon fill="%23FFF" points="0 300 90 150 -90 150"/><polygon fill="%23FFF" points="180 300 90 450 270 450"/><polygon fill="%23666" points="180 300 270 150 90 150"/><polygon fill="%23222" points="360 300 270 450 450 450"/><polygon fill="%23FFF" points="360 300 450 150 270 150"/><polygon fill="%23444" points="540 300 450 450 630 450"/><polygon fill="%23222" points="540 300 630 150 450 150"/><polygon fill="%23AAA" points="720 300 630 450 810 450"/><polygon fill="%23666" points="720 300 810 150 630 150"/><polygon fill="%23FFF" points="900 300 810 450 990 450"/><polygon fill="%23999" points="900 300 990 150 810 150"/><polygon points="0 600 -90 750 90 750"/><polygon fill="%23666" points="0 600 90 450 -90 450"/><polygon fill="%23AAA" points="180 600 90 750 270 750"/><polygon fill="%23444" points="180 600 270 450 90 450"/><polygon fill="%23444" points="360 600 270 750 450 750"/><polygon fill="%23999" points="360 600 450 450 270 450"/><polygon fill="%23666" points="540 600 630 450 450 450"/><polygon fill="%23222" points="720 600 630 750 810 750"/><polygon fill="%23FFF" points="900 600 810 750 990 750"/><polygon fill="%23222" points="900 600 990 450 810 450"/><polygon fill="%23DDD" points="0 900 90 750 -90 750"/><polygon fill="%23444" points="180 900 270 750 90 750"/><polygon fill="%23FFF" points="360 900 450 750 270 750"/><polygon fill="%23AAA" points="540 900 630 750 450 750"/><polygon fill="%23FFF" points="720 900 810 750 630 750"/><polygon fill="%23222" points="900 900 990 750 810 750"/><polygon fill="%23222" points="1080 300 990 450 1170 450"/><polygon fill="%23FFF" points="1080 300 1170 150 990 150"/><polygon points="1080 600 990 750 1170 750"/><polygon fill="%23666" points="1080 600 1170 450 990 450"/><polygon fill="%23DDD" points="1080 900 1170 750 990 750"/></g></svg>');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Main container */
+.main-container {
+    display: flex;
+    width: 1280px;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+    margin: 0 auto;
+    padding: 60px 20px 20px 20px;
+    min-height: 100vh;
+}
+
+/* Header section */
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.title-with-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.success-icon {
+    flex-shrink: 0;
+}
+
+.success-icon img {
+    display: block;
+    width: 64px;
+    height: 64px;
+}
+
+.main-title {
+    color: var(--Dark-Text-main);
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin: 0;
+    flex: 1;
+}
+
+.main-subtitle {
+    color: var(--Dark-Text-main);
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+/* Steps section */
+.steps-section {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+    align-self: stretch;
+}
+
+.step-card {
+    display: flex;
+    padding: 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1 0 0;
+    border-radius: 20px;
+    border: 1px solid var(--card-border);
+    background: var(--card-background);
+}
+
+.step-badge {
+    display: flex;
+    padding: 4px 12px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 100px;
+    background: rgba(146, 68, 255, 0.21);
+    color: #CAA5FF;
+    text-align: center;
+    font-family: Ubuntu;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.step-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.step-description {
+    color: var(--Dark-Text-main);
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin: 0;
+}
+
+.highlight-text {
+    color: var(--Dark-Text-main);
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+.highlight-pin {
+    color: var(--Dark-Text-main);
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;
+}
+
+.step-number-inline {
+    color: #EC5143;
+    font-family: Ubuntu;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.step-image {
+    align-self: stretch;
+}
+
+.screenshot {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
+/* Footer links */
+.footer-links {
+    text-align: center;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer-link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 12px;
+    font-family: Ubuntu;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive design */
+@media (max-width: 1320px) {
+    .main-container {
+        width: 100%;
+        max-width: 1280px;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        gap: 60px;
+        padding: 30px 15px;
+    }
+    
+    .title-with-icon {
+        gap: 12px;
+    }
+    
+    .success-icon img {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .main-title {
+        font-size: 42px;
+    }
+    
+    .main-subtitle {
+        font-size: 18px;
+    }
+    
+    .steps-section {
+        flex-direction: column;
+        gap: 24px;
+    }
+    
+    .step-card {
+        padding: 20px;
+    }
+    
+    .step-description,
+    .highlight-text,
+    .highlight-pin,
+    .step-number-inline {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        gap: 40px;
+        padding: 20px 10px;
+    }
+    
+    .title-with-icon {
+        gap: 8px;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .success-icon {
+        margin-top: 0;
+    }
+    
+    .success-icon img {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .main-title {
+        font-size: 32px;
+        text-align: center;
+    }
+    
+    .main-subtitle {
+        font-size: 16px;
+    }
+    
+    .step-card {
+        padding: 16px;
+        gap: 16px;
+    }
+    
+    .step-content {
+        gap: 12px;
+    }
+    
+    .step-description,
+    .highlight-text,
+    .highlight-pin,
+    .step-number-inline {
+        font-size: 14px;
+    }
+}
